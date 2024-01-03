@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <a href="#">
+      <title>ИП Степан - Деревянные Ящики и Поддоны</title>
+    </a>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+    />
+    <!-- Подключение Swiper.js из CDN -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <!-- Скрипт для отправки формы и отображения сообщений об ошибках -->
+    <script>
+      function submitForm() {
+        var name = document.getElementById("name").value;
+        var phone = document.getElementById("phone").value;
+        var email = document.getElementById("email").value;
+        var message = document.getElementById("message").value;
+
+        var xhr = new XMLHttpRequest();
+        var url = "process_form.php"; // Путь к вашему PHP-скрипту
+
+        xhr.open("POST", url, true);
+        xhr.setRequestHeader(
+          "Content-Type",
+          "application/x-www-form-urlencoded"
+        );
+
+        // Обработка успешной отправки данных
+        xhr.onload = function () {
+          if (xhr.status == 200) {
+            // Добавьте здесь код для обработки ответа от сервера, если необходимо
+            alert("Форма успешно отправлена!");
+          } else {
+            displayError(
+              "Произошла ошибка при отправке формы. Пожалуйста, повторите попытку позже."
+            );
+          }
+        };
+
+        // Обработка ошибок при отправке
+        xhr.onerror = function () {
+          displayError(
+            "Произошла ошибка при отправке формы. Пожалуйста, повторите попытку позже."
+          );
+        };
+
+        // Собираем данные для отправки на сервер
+        var data =
+          "name=" +
+          encodeURIComponent(name) +
+          "&phone=" +
+          encodeURIComponent(phone) +
+          "&email=" +
+          encodeURIComponent(email) +
+          "&message=" +
+          encodeURIComponent(message);
+
+        // Отправляем данные на сервер
+        xhr.send(data);
+      }
+
+      // Функция для отображения сообщений об ошибках
+      function displayError(errorMessage) {
+        var errorContainer = document.getElementById("error-container");
+        if (!errorContainer) {
+          // Создаем контейнер для сообщений об ошибках, если его нет
+          errorContainer = document.createElement("div");
+          errorContainer.id = "error-container";
+          document.body.appendChild(errorContainer);
+        }
+
+        // Отображаем сообщение об ошибке
+        errorContainer.innerHTML = errorMessage;
+      }
+    </script>
+
+    <!-- Кнопка "Вернуться наверх" -->
+    <div id="scrollTopBtn" onclick="scrollToTop()">Наверх</div>
+    <!-- Шапка -->
+    <header>
+      <div class="logo">ИП Степан</div>
+      <nav>
+        <div class="menu-icon">&#9776;</div>
+        <ul>
+          <li><a href="#home">Главная</a></li>
+          <li><a href="#about">О Нас</a></li>
+          <li><a href="#products">Продукция</a></li>
+          <li><a href="#reviews">Отзывы</a></li>
+          <li><a href="#contact">Связаться с нами</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Главная страница -->
+    <section id="home">
+      <!-- Карусель с размытыми фотографиями для блока #home -->
+      <div id="home-carousel" class="swiper-container">
+        <div class="swiper-wrapper">
+          <div
+            class="swiper-slide"
+            style="background-image: url('/лого/dfon.jpg')"
+          >
+            <!-- Добавленный текст на первом слайде -->
+            <div class="carousel-text">
+              <h1>Деревянные ящики и поддоны высочайшего качества</h1>
+              <p>Узнайте, почему выбирают нас!</p>
+              <button onclick="scrollToSection('products')">
+                Узнать больше
+              </button>
+            </div>
+          </div>
+          <div
+            class="swiper-slide"
+            style="background-image: url('/лого/dpoddon.jpg')"
+          >
+            <!-- Добавленный текст на первом слайде -->
+            <div class="carousel-text">
+              <h1>Деревянные ящики и поддоны высочайшего качества</h1>
+              <p>Узнайте, почему выбирают нас!</p>
+              <button onclick="scrollToSection('products')">
+                Узнать больше
+              </button>
+            </div>
+          </div>
+          <div
+            class="swiper-slide"
+            style="background-image: url('/лого/dbox.jpg')"
+          >
+            <!-- Добавленный текст на первом слайде -->
+            <div class="carousel-text">
+              <h1>Деревянные ящики и поддоны высочайшего качества</h1>
+              <p>Узнайте, почему выбирают нас!</p>
+              <button onclick="scrollToSection('products')">
+                Узнать больше
+              </button>
+            </div>
+          </div>
+          <!-- Добавьте дополнительные слайды по аналогии -->
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-pagination"></div>
+      </div>
+    </section>
+
+    <!-- О Нас -->
+    <section id="about">
+      <h2>О Нас</h2>
+      <p>
+        ИП Степан – это семейный бизнес, специализирующийся на производстве
+        высококачественных деревянных ящиков и поддонов. Наша компания была
+        основана в 2005 году, и с тех пор мы посвящаем себя созданию продукции,
+        которая сочетает в себе надежность, функциональность и экологичность.
+      </p>
+      <p></p>
+      <p></p>
+    </section>
+
+    <!-- Продукция -->
+    <section id="products">
+      <h2>Продукция</h2>
+
+      <!-- Продукт 1: Деревянные контейнеры -->
+      <div
+        class="product-item"
+        onclick="showProductModal('/лого/dbox.jpg', 'Изысканные деревянные контейнеры, идеальные для упаковки и хранения различных товаров. Надежные и стильные.')"
+      >
+        <img
+          class="product-image"
+          src="/лого/dbox.jpg"
+          alt="Деревянные контейнеры"
+        />
+        <div class="product-description">
+          <p>
+            Изысканные деревянные контейнеры, идеальные для упаковки и хранения
+            различных товаров. Надежные и стильные.
+          </p>
+        </div>
+      </div>
+
+      <!-- Продукт 2: Деревянные поддоны -->
+      <div
+        class="product-item"
+        onclick="showProductModal('/лого/dpoddon.jpg', 'Прочные деревянные поддоны для безопасной транспортировки грузов. Идеальное решение для вашего логистического процесса.')"
+      >
+        <img
+          class="product-image"
+          src="/лого/dpoddon.jpg"
+          alt="Деревянные поддоны"
+        />
+        <div class="product-description">
+          <p>
+            Прочные деревянные поддоны для безопасной транспортировки грузов.
+            Идеальное решение для вашего логистического процесса.
+          </p>
+        </div>
+      </div>
+
+      <!-- Добавьте дополнительные продукты по аналогии -->
+
+      <!-- Модальное окно для увеличенного изображения -->
+      <div class="product-modal" id="productModal">
+        <div class="modal-content">
+          <span class="close-modal" onclick="closeProductModal()">&times;</span>
+          <img class="modal-image" src="" alt="Увеличенное изображение" />
+          <p class="modal-description"></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Скрипт для управления модальным окном -->
+    <script>
+      function showProductModal(imageSrc, description) {
+        const modal = document.getElementById("productModal");
+        const modalImage = modal.querySelector(".modal-image");
+        const modalDescription = modal.querySelector(".modal-description");
+
+        modalImage.src = imageSrc;
+        modalDescription.textContent = description;
+
+        modal.classList.add("active");
+      }
+
+      function closeProductModal() {
+        const modal = document.getElementById("productModal");
+        modal.classList.remove("active");
+      }
+    </script>
+
+    <!-- Отзывы -->
+    <section id="reviews">
+      <h2>Отзывы</h2>
+      <div id="review1" class="review">
+        <img src="/лого/m2.jpg" alt="m2" />
+        <p>
+          Замечательные деревянные ящики! Очень качественные материалы и
+          отличное исполнение. Будем заказывать еще!
+        </p>
+      </div>
+
+      <!-- Отзыв 2 -->
+      <div id="review2" class="review">
+        <img src="/лого/m3.jpg" alt="m3" />
+        <p>
+          Продукция ИП Степан превзошла все наши ожидания. Спасибо за отличный
+          сервис и оперативность!
+        </p>
+      </div>
+
+      <!-- Отзыв 3 -->
+      <div id="review3" class="review">
+        <img src="/лого/m2.jpg" alt="m2" />
+        <p>
+          Деревянные поддоны отличного качества. Надежные и прочные. Рекомендую!
+        </p>
+      </div>
+      <!-- Блок с отзывами и формой для отправки отзывов -->
+    </section>
+
+    <!-- Связаться с нами -->
+    <section id="contact">
+      <h2>Связаться с нами</h2>
+
+      <form id="contactForm">
+        <label for="name">Имя:</label>
+        <input type="text" id="name" name="name" required />
+
+        <label for="phone">Номер телефона:</label>
+        <input type="tel" id="phone" name="phone" required />
+
+        <label for="email">Электронная почта:</label>
+        <input type="email" id="email" name="email" required />
+
+        <label for="message">Ваше предложение:</label>
+        <textarea id="message" name="message" rows="4" required></textarea>
+
+        <button type="button" onclick="submitForm()">Отправить</button>
+      </form>
+      <h2></h2>
+      <!-- Контейнер для логотипов -->
+      <div class="contact-icons">
+        <a href="#" target="_blank">
+          <img src="/лого/telegram.png" alt="Telegram" />
+        </a>
+        <a href="#" target="_blank">
+          <img src="/лого/viber.png" alt="Viber" />
+        </a>
+      </div>
+      <!-- Форма обратной связи и контактная информация -->
+    </section>
+
+    <!-- Нижний колонтитул -->
+    <footer>
+      <ul>
+        <li><a href="#home">Главная</a></li>
+        <li><a href="#about">О Нас</a></li>
+        <li><a href="#products">Продукция</a></li>
+        <li><a href="#reviews">Отзывы</a></li>
+        <li><a href="#contact">Связаться с нами</a></li>
+      </ul>
+      <h2></h2>
+      <p>&copy; 2024 ИП Степан. Все права защищены.</p>
+    </footer>
+    <script src="script.js"></script>
+    <script src="Swiper.js"></script>
+    <script src="submitForm.js"></script>
+  </body>
+</html>

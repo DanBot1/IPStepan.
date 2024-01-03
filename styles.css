@@ -1,0 +1,579 @@
+body,
+h1,
+h2,
+p,
+ul,
+li,
+button {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+h1,
+h2,
+p,
+ul,
+li,
+button,
+label,
+input,
+textarea {
+  font-family: "Roboto", sans-serif;
+  line-height: 1.6;
+}
+
+/* Шапка */
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+}
+
+nav li {
+  margin-right: 20px;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* Дополнительные стили для блока #home и карусели */
+#home {
+  position: relative;
+  overflow: hidden; /* Убедимся, что изображения не выходят за пределы блока */
+}
+
+/* Стили для карусели и её элементов */
+#home-carousel {
+  width: 100%;
+  height: 100vh; /* 100% высоты видимой области */
+}
+
+.swiper-slide {
+  background-size: cover;
+  background-position: center;
+  height: 100%; /* 100% высоты каждого слайда */
+}
+
+/* Добавьте стили для стрелок и пагинации, если использовали их в Swiper.js */
+.swiper-button-next,
+.swiper-button-prev {
+  color: #007bff; /* Цвет стрелок */
+  font-size: 24px;
+}
+
+.swiper-pagination-bullet {
+  background-color: #0c1cb1; /* Цвет точек пагинации */
+}
+
+/* Стили для текста на слайде карусели */
+.carousel-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #fff; /* Цвет текста */
+}
+
+.carousel-text h1 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+}
+
+.carousel-text p {
+  font-size: 1.2em;
+  margin-bottom: 30px;
+}
+
+.carousel-text button {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 1em;
+  cursor: pointer;
+  border: none;
+}
+
+/* Стили для текста на слайде карусели */
+.carousel-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #fff; /* Цвет текста */
+  padding: 0 20px; /* Добавленные отступы по бокам */
+  box-sizing: border-box; /* Учёт отступов в размере блока */
+}
+
+.carousel-text h1 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+}
+
+.carousel-text p {
+  font-size: 1.2em;
+  margin-bottom: 30px;
+}
+
+.carousel-text button {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 1em;
+  cursor: pointer;
+  border: none;
+}
+
+/* Стили для слайдов карусели */
+.swiper-slide {
+  background-size: cover; /* Адаптация фото до краёв блока */
+  background-position: center;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Стили для контейнера сообщений об ошибках */
+#error-container {
+  position: fixed;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #ff0000;
+  color: #ffffff;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+  z-index: 999;
+  display: none;
+}
+
+#error-container.active {
+  display: block;
+}
+
+/* Главная страница */
+#home {
+  background-color: #ffffff;
+  padding: 50px;
+  text-align: center;
+}
+
+#home h1 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+}
+
+#home p {
+  font-size: 1.2em;
+  margin-bottom: 30px;
+}
+
+button {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 1em;
+  cursor: pointer;
+  border: none;
+}
+
+/* О Нас, Продукция, Отзывы, Связаться с нами */
+section {
+  padding: 50px;
+}
+
+h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+/* Добавляем логотипы и стили для Связаться с нами */
+#contact {
+  background-color: #f9f9f9;
+  padding: 50px;
+  text-align: center;
+}
+
+.contact-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.contact-icons img {
+  width: 40px;
+  margin: 0 10px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.contact-icons img:hover {
+  transform: scale(1.05);
+}
+
+/* Стили для кнопки "Вернуться наверх" */
+#scrollTopBtn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  display: none;
+  z-index: 1000;
+}
+
+#scrollTopBtn:hover {
+  background-color: #0056b3;
+}
+
+/* Нижний колонтитул */
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+footer ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+}
+
+footer li {
+  margin-right: 20px;
+}
+
+footer a {
+  color: #fff;
+  text-decoration: none;
+}
+
+/* Отзывы */
+#reviews {
+  background-color: #f9f9f9;
+  padding: 50px;
+  text-align: center;
+}
+
+.review {
+  margin-bottom: 30px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+}
+
+.review img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  transition: border-color 0.3s ease-in-out;
+}
+
+.review:hover {
+  background-color: #ececec;
+}
+
+.review:hover img {
+  border-color: #333;
+}
+
+.review p {
+  margin-top: 10px;
+}
+
+/* Продукция */
+#products {
+  position: relative;
+  padding: 50px;
+  text-align: center;
+  background: url("/лого/dfon.jpg") center/cover no-repeat;
+}
+
+.product-item {
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  margin: 20px;
+  cursor: pointer;
+  border-radius: 5%;
+}
+
+.product-image {
+  width: 200px;
+  height: 200px;
+  border-radius: 5%;
+  transition: transform 0.3s ease-in-out;
+}
+
+.product-description {
+  margin-top: 10px;
+  color: #fcebeb; /* Чёрный цвет текста описания */
+}
+
+.product-item:hover .product-image {
+  transform: scale(1.1);
+}
+
+.product-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  position: relative;
+  text-align: center;
+  color: #000000; /* Чёрный цвет текста в модальном окне */
+}
+
+.close-modal {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #000; /* Чёрный цвет крестика */
+  transition: transform 0.3s ease-in-out;
+}
+
+.close-modal:hover {
+  transform: scale(1.1);
+}
+
+.close-modal::before {
+  content: "\00D7"; /* Знак "×" */
+}
+
+.product-modal.active {
+  display: flex;
+}
+
+.modal-image {
+  max-width: 100%;
+  max-height: 70vh;
+  margin: 20px auto;
+  border-radius: 10px;
+}
+
+/* О Нас */
+#about {
+  padding: 50px;
+  text-align: center;
+}
+
+#about h2 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+}
+
+#about p {
+  font-size: 1.2em;
+  line-height: 1.6;
+}
+
+/* Пример 3 отзывов */
+#review1 img {
+  border-color: #ff9900; /* Цвет границы для первого отзыва */
+}
+
+#review2 img {
+  border-color: #3399cc; /* Цвет границы для второго отзыва */
+}
+
+#review3 img {
+  border-color: #cc3366; /* Цвет границы для третьего отзыва */
+}
+
+/* Связаться с нами */
+#contact {
+  padding: 50px;
+  text-align: center;
+  background: #f4f4f4; /* Цвет фона формы */
+}
+
+form {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+button {
+  background-color: #007bff; /* Цвет фона кнопки */
+  color: #fff; /* Цвет текста кнопки */
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3; /* Цвет фона кнопки при наведении */
+}
+
+/* Медиа-запрос для маленьких экранов (до 600px) */
+@media only screen and (max-width: 600px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .menu-icon {
+    display: block;
+    font-size: 1.5em;
+    cursor: pointer;
+    order: 1;
+  }
+
+  nav {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center; /* Добавлено для центрирования иконки бургера */
+    margin-top: 10px;
+  }
+
+  nav ul {
+    flex-direction: column;
+    display: none;
+    position: absolute;
+    width: 100%;
+    background-color: #333;
+    text-align: center;
+    top: 60px; /* Поднимите меню немного вниз для лучшего визуального восприятия */
+  }
+
+  nav ul.active {
+    display: flex;
+  }
+
+  nav li {
+    margin-bottom: 10px;
+  }
+
+  #home h1 {
+    font-size: 2em;
+    margin-bottom: 10px;
+  }
+
+  #home p {
+    font-size: 1em;
+    margin-bottom: 20px;
+  }
+
+  button {
+    padding: 8px 16px;
+    font-size: 0.9em;
+  }
+
+  section {
+    padding: 30px;
+  }
+
+  #products {
+    padding: 30px;
+  }
+
+  .product-item {
+    margin: 10px;
+  }
+
+  .product-image {
+    width: 150px;
+    height: 150px;
+  }
+
+  .product-description {
+    font-size: 0.9em;
+  }
+
+  .product-modal {
+    padding: 10px;
+  }
+
+  .modal-content {
+    padding: 10px;
+  }
+
+  .modal-image {
+    max-height: 50vh;
+    margin: 10px auto;
+  }
+
+  footer {
+    padding: 10px;
+  }
+
+  footer li {
+    margin-right: 10px;
+  }
+
+  .contact-icons img {
+    width: 30px;
+    margin: 0 5px;
+  }
+
+  .review {
+    padding: 10px;
+    margin-bottom: 20px;
+  }
+
+  .review img {
+    width: 50px;
+    height: 50px;
+  }
+
+  form {
+    max-width: 100%;
+  }
+}
